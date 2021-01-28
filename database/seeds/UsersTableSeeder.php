@@ -28,6 +28,6 @@ class UsersTableSeeder extends Seeder
             ]);
         });
 
-        $users = factory(User::class,3)->make();
+        $users = factory(User::class,3)->create();
     }
 }
