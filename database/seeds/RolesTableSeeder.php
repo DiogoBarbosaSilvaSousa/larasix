@@ -17,5 +17,8 @@ class RolesTableSeeder extends Seeder
                 'name' => 'admin'
             ]);
         });
+
+        $roles = factory(Role::class,3)->create();
+
     }
 }
