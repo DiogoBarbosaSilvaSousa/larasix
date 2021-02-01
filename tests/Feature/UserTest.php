@@ -26,7 +26,7 @@ class UserTest extends TestCase
 
 
     /**
-     *  Tabela users
+     *  Tabela users verificar se usuário 'admin' foi criado
      *
      * @return void
      */
@@ -42,4 +42,5 @@ class UserTest extends TestCase
             $this->assertTrue(false);
         }
     }
+
 }
