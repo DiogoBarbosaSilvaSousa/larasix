@@ -10,8 +10,6 @@ use Tests\TestCase;
 class UserTest extends TestCase
 {
 
-   // use RefreshDatabase;
-
     /**
      * A basic feature test example.
      *
