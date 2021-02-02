@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//admin
+Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function(){
+    Route::get('/', function () {
+        return view('admin/post');
+    });
+});
