@@ -12,13 +12,25 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        Role::where('name','admin')->firstOr(function(){
-            Role::create([
-                'name' => 'admin'
-            ]);
+        Role::where('name','administrator')->firstOr(function(){
+            Role::create(['name' => 'administrator']);
         });
 
-        $roles = factory(Role::class,3)->create();
+        Role::where('name','editor')->firstOr(function(){
+            Role::create(['name' => 'editor']);
+        });
+
+        Role::where('name','author')->firstOr(function(){
+            Role::create(['name' => 'author']);
+        });
+
+        Role::where('name','contributor')->firstOr(function(){
+            Role::create(['name' => 'contributor']);
+        });
+
+        Role::where('name','subscriber')->firstOr(function(){
+            Role::create(['name' => 'subscriber']);
+        });
 
     }
 }

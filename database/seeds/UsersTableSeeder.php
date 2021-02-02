@@ -12,11 +12,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        /*DB::table('users')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
-        ]);*/
 
         User::where('email','admin@gmail.com')->firstOr(function(){
             User::create([
@@ -26,8 +21,10 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'remember_token' => Str::random(10)
             ]);
+
+            $users = factory(User::class,3)->create();
         });
 
-        $users = factory(User::class,3)->create();
+
     }
 }

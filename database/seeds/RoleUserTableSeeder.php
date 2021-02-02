@@ -32,9 +32,9 @@ class RoleUserTableSeeder extends Seeder
          * Verifico se existe algum registro com o name selecionado
          * caso não eu crio um registro com o name selecionado.
          */
-        $role =  Role::where('name','admin')->firstOr(function(){
+        $role =  Role::where('name','administrator')->firstOr(function(){
                     return Role::create([
-                        'name' => 'admin'
+                        'name' => 'administrator'
                     ]);
                 });
 
