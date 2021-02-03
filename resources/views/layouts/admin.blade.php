@@ -71,10 +71,25 @@
                             Dashboard <span class="sr-only">(current)</span>
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link {{ Route::currentRouteName() == 'users.index' ? 'active' : ''  }}" href="{{ route('users.index') }}">
                             <span data-feather="users"></span>
                             Usuários
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() == 'posts.index' ? 'active' : ''  }}" href="{{ route('posts.index') }}">
+                            <span data-feather="book"></span>
+                            Posts
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ Route::currentRouteName() == 'categories.index' ? 'active' : ''  }}" href="{{ route('categories.index') }}">
+                            <span data-feather="book"></span>
+                            Categorias
                         </a>
                     </li>
                 </ul>
@@ -92,8 +107,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="{{ asset('admin_theme/assets/js/vendor/jquery.slim.min.js') }}"><\/script>')</script>
-<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script>window.jQuery || document.write('<script src="{{ asset('admin_theme/assets/js/vendor/jquery.slim.min.js') }}"><\/script>')</script> -->
+<script src="{{ asset('admin_theme/assets/dist/js/bootstrap.bundle.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
 <script src="{{ asset('admin_theme/dashboard.js') }}"></script>
 </body>
