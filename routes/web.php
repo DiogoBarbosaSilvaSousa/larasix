@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //admin
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function(){
     Route::get('/', function () {
-        return view('admin/post');
-    });
+        return view('admin/index');
+    })->name('admin');
+
+    Route::resource('users','Admin\UserController' );
 });
