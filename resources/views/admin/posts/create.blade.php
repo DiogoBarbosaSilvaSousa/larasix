@@ -22,6 +22,16 @@
     </div>
 @endif
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 
 <h2>Novo Post</h2>
 
@@ -52,7 +62,7 @@
                 <div class="form-group">
                     <label for="inputCategories">Categorias</label>
                     <select class="form-control" name="category" id="inputCategories">
-                        <option>Selecione uma categoria</option>
+                        <option value="">Selecione uma categoria</option>
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
