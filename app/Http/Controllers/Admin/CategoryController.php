@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCategoryRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -30,7 +31,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -39,9 +40,17 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategoryRequest $request)
     {
-        //
+        $category = new Category();
+
+        $category->name = $request->post('category');
+
+        $category->save();
+
+        $request->session()->flash('message',"Categoria $category->id adicionada com sucesso ");
+
+        return redirect()->route('categories.index');
     }
 
     /**
