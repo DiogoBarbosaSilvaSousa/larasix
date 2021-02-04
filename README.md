@@ -7,71 +7,122 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Sobre o Projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Blog de testes feito para avaliação na empresa Benfeitoria como demais testes pessoais.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Recursos usados
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+PHP 7.4.7 (cli) (built: Jun  9 2020 13:34:30) ( NTS Visual C++ 2017 x64 )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
-## Learning Laravel
+Node v12.18.2
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+NPM 6.14.5
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Composer version 2.0.9 2021-01-27 16:09:27
 
-## Laravel Sponsors
+Banco de dados SQLITE3
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Laravel versão 6 LTS (6.20)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+## Etapas para rodar o projeto localmente
 
-## Contributing
+1 - Clonar o projeto para sua máquina local
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2 - Dentro da pasta do projeto executar o comando 'composer install' pela linha de comando (Powershell, CMD, 'Linux Shell')
 
-## Code of Conduct
+3 - Dentro da pasta do projeto executar o comando 'npm install'
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4 - Usar o comando 'php artisan migrate' para criar a estrutura do banco de dados (tem um database.sqlite dentro da pasta database)
 
-## Security Vulnerabilities
+5 - Usar o comando 'php artisan db:seed' para popular o banco de dados com os dados de teste
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6 - Para ver se todos os testes estão funcionando use o comando '.\vendor\bin\phpunit
+'
+
+7 - Usar o comando 'php artisan storage:link' isso criará um link simbólico para a pasta storage lá que serão armazenados as imagens salvas para novos posts.
+
+8 - Usar o comando 'php artisan serve' isso irá rodar um servidor local exemplo http://localhost:8000 ou http://127.0.0.1 
+
+## Para acessar o http://localhost:8000/admin ou http://127.0.0.1/admin
+
+Quando rodamos o comando 'php artisan db:seed' eu crio o usuário 'admin@gmail.com' senha 'password' como eu criei uma tabela de roles eu atribuo o perfil 'administrator' para ele caso tente acessar com outro usuário você vai se logar mas vai ser redirecionado para tela de 'home'.
+
+## Tabelas do banco de dados que criei
+
+1 - categories
+
+2 - category_post
+
+3 - posts
+
+4 - role_user
+
+5 - roles
+
+6 - users
+
+## Alguns comandos executados
+
+Site de refência -> https://laravel.com/docs/6.x/
+
+"Criei arquivo na pasta database"
+- database.sqlite
+
+"Alterei o .env na linha do banco de dados só deixei "
+- DB_CONNECTION=sqlite
+
+"Instalando a autenticação"
+
+- composer require laravel/ui "^1.0" --dev
+
+- php artisan ui vue --auth
+
+"Cria as visualizações"
+
+- npm install
+
+"Corrige algumas vulnerabilidades"
+
+- npm audit fix
+
+"Compila o css e o javascript"
+
+- npm run dev
+
+"Criando db seed"
+- php artisan make:seeder UsersTableSeeder
+
+"Instalei a dependência abaixo para resolver um problema do sqlite 'https://laravel.com/docs/6.x/migrations#modifying-columns'"
+- composer require doctrine/dbal "^2.10.4"
+
+"Criei o model Role"
+- php artisan make:model Role
+
+"Criei o RoleFactory"
+- php artisan make:factory RoleFactory --model=Role
+
+"Instalei o pacote de idiomas site 'https://github.com/Laravel-Lang/lang'"
+"Copiei o idioma correspondente em vendor/laravel-lang/lang para a pasta lang"
+- composer require laravel-lang/lang:~5.0
+
+"Limpei o cache do config 'Configuration cache cleared!'"
+- php artisan config:clear
+
+"Limpei o cache 'Application cache cleared!'"
+- php artisan cache:clear
+
+"Criando link simbólico para o local onde serão salvos os arquivos"
+- php artisan storage:link
+
+"Criando validação para criação de Posts"
+- php artisan make:request StorePostRequest
+
+"Instalei o componente de paginação do vue.js para o Laravel"
+- npm install laravel-vue-pagination
+
 
 ## License
 
