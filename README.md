@@ -34,7 +34,9 @@ Banco de dados SQLITE3
 
 Laravel versão 6 LTS (6.20)
 
+
 ## Etapas para rodar o projeto localmente
+
 
 1 - Clonar o projeto para sua máquina local
 
@@ -42,16 +44,25 @@ Laravel versão 6 LTS (6.20)
 
 3 - Dentro da pasta do projeto executar o comando 'npm install'
 
-4 - Usar o comando 'php artisan migrate' para criar a estrutura do banco de dados (tem um database.sqlite dentro da pasta database)
+4 - Copie o arquivo .env.example na raiz da pasta e renomeie para .env altera a linha do DB_CONNECTION para DB_CONNECTION=sqlite isso indica a configuração da nossa conexão. Essas outras DB_HOST=127.0.0.1
+DB_PORT=3306 , DB_DATABASE=laravel , DB_USERNAME=root , DB_PASSWORD= você pode comentar ou apagar.
 
-5 - Usar o comando 'php artisan db:seed' para popular o banco de dados com os dados de teste
+5 - Usar o comando 'php artisan key:generate' essa chave é necessária para a questão de segurança na aplicação ela aparece dentro do arquivo .env na linha APP_ENV algo parecido com isso APP_KEY=base64:CY9EbZ69FWeJLCxthVl98h9XFGV0dlYun2ZrUrgfhs8=
 
-6 - Para ver se todos os testes estão funcionando use o comando '.\vendor\bin\phpunit
+6 - Dentro da pasta database que está na raíz da aplicação crie o arquivo database.sqlite se estiver no windows com o VS CODE clique com o botão direito na pasta escolha NEW FILE e nomeie o arquivo como database.sqlite
+
+7 - Usar o comando 'php artisan migrate' para criar a estrutura do banco de dados (tem um database.sqlite dentro da pasta database)
+
+8 - Usar o comando 'php artisan db:seed' para popular o banco de dados com os dados de teste
+
+9 - Para ver se todos os testes estão funcionando use o comando '.\vendor\bin\phpunit
 '
 
-7 - Usar o comando 'php artisan storage:link' isso criará um link simbólico para a pasta storage lá que serão armazenados as imagens salvas para novos posts.
+10 - Usar o comando 'php artisan storage:link' isso criará um link simbólico para a pasta storage lá que serão armazenados as imagens salvas para novos posts.
 
-8 - Usar o comando 'php artisan serve' isso irá rodar um servidor local exemplo http://localhost:8000 ou http://127.0.0.1 
+11 - Usar o comando 'php artisan serve' isso irá rodar um servidor local exemplo http://localhost:8000 ou http://127.0.0.1 
+
+12 - Depois de usar o comando 'php artisan serve' abra o arquivo .env e atualize a linha APP_URL=http://localhost para ficar igual a url base que ele te mostrou exemplo APP_URL=http://localhost:8000
 
 ## Para acessar o http://localhost:8000/admin ou http://127.0.0.1/admin
 
