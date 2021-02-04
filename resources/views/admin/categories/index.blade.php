@@ -22,7 +22,7 @@
     </div>
 @endif
 
-<h2>Categorias <button type="button" class="btn btn-primary"><span data-feather="plus-circle"></span> Adicionar Categoria</button></h2>
+<h2>Categorias <a href="{{ route('categories.create') }}" class="btn btn-primary"><span data-feather="plus-circle"></span> Adicionar Categoria</a></h2>
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>
