@@ -64,6 +64,8 @@ DB_PORT=3306 , DB_DATABASE=laravel , DB_USERNAME=root , DB_PASSWORD= você pode 
 
 12 - Depois de usar o comando 'php artisan serve' abra o arquivo .env e atualize a linha APP_URL=http://localhost para ficar igual a url base que ele te mostrou exemplo APP_URL=http://localhost:8000
 
+13 - Admin da aplicação  usuário 'admin@gmail.com' senha 'password'
+
 ## Para acessar o http://localhost:8000/admin ou http://127.0.0.1/admin
 
 Quando rodamos o comando 'php artisan db:seed' eu crio o usuário 'admin@gmail.com' senha 'password' como eu criei uma tabela de roles eu atribuo o perfil 'administrator' para ele caso tente acessar com outro usuário você vai se logar mas vai ser redirecionado para tela de 'home'.
