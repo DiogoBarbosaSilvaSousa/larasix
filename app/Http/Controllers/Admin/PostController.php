@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\CategoryPost;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePostRequest;
 use App\Post;
 use Illuminate\Http\Request;
 use Auth;
@@ -52,8 +53,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
+
         $post = new Post();
 
         //Arquivo armazenado e local onde o arquivo foi armazenado
