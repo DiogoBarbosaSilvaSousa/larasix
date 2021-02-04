@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/posts', function () {
+    return view('front/posts/index');
+})->name('posts');
+
+Route::get('/posts/{posts}', function () {
+    return view('front/posts/show',['post_id'=>request('posts')]);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
